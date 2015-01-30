@@ -28,7 +28,6 @@ class NewVisitorTest(FunctionalTest):
         self.check_for_row_in_list_table('1: Buy peacock feathers')
 
         inputbox = self.get_item_input_box()
-        self.assertEqual(inputbox.get_attribute('placeholder'))
         inputbox.send_keys('Use peacock feathers to make a fly')
         inputbox.send_keys(Keys.ENTER)
         
