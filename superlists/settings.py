@@ -24,7 +24,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['agiheart.com', 'localhost']
+ALLOWED_HOSTS = ['agiheart.com']
 
 
 # Application definition
