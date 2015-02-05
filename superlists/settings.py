@@ -20,12 +20,11 @@ BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 SECRET_KEY = 'w1=d%ef4z56$qw=psm#n(phae=ie707*r$f3v$98rj0@w3(6jx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True 
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['agiheart.com']
-
+ALLOWED_HOSTS = ['agiheart.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -37,7 +36,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lists',
+    'accounts',
 )
+
+AUTH_USER_MODEL = 'accounts.ListUser'
+AUTHENTICATION_BACKENDS = (
+        'accounts.authentication.PersonaAuthenticationBackend',
+        )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -83,4 +88,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '../static')
+
+LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'console': {
+                'level': 'DEBUG',
+                'class': 'logging.StreamHandler',
+                },
+            },
+        'loggers': {
+            'django': {
+                'handlers': ['console'],
+                },
+            },
+        'root': {'level': 'INFO'},
+        }
 
