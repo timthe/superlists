@@ -1,7 +1,7 @@
 import sys
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login, logout as auth_logout
-from django.shortcuts import render
+from django.shortcuts import redirect
 
 def login(request):
     print('login view', file=sys.stderr)
