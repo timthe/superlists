@@ -104,3 +104,8 @@ LOGGING = {
             },
         'root': {'level': 'INFO'},
         }
+
+AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKEND = (
+    'accounts.authentication.PersonaAuthenticationBackend',
+)
